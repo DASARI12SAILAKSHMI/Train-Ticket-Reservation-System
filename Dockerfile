@@ -1,5 +1,7 @@
-FROM tomcat:8.0.20-jre8
+FROM jetty:11-jdk17
 
-COPY target/app.war  /usr/local/tomcat/webapps/app.war
+COPY target/TrainBook-1.0.0-SNAPSHOT.war  /usr/local/tomcat/webapps/TrainBook-1.0.0-SNAPSHOT.war
 
-EXPOSE 8080
+EXPOSE 8083
+
+ENTRYPOINT ["java", "-jar", "TrainBook-1.0.0-SNAPSHOT.war"]
